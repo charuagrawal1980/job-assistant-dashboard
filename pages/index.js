@@ -127,8 +127,8 @@ function App() {
 
   const fetchGoogleSheetsData = async () => {
     try {
-      const SHEET_ID1 = '1VboLfklsQTPmJ5-kdUuKSjiTQxQqZWtMDHO52V5aoDY';
-      const SHEET_ID= '1sed1ekaNJdUWyivZskMEGPq3H-exlysV'
+      const SHEET_ID = '1VboLfklsQTPmJ5-kdUuKSjiTQxQqZWtMDHO52V5aoDY';
+      const SHEET_ID1= '1sed1ekaNJdUWyivZskMEGPq3H-exlysV'
       const RANGE = 'Sheet2!A2:I';
       
       const response = await fetch(`/api/sheets?sheetId=${SHEET_ID}&range=${RANGE}`);
