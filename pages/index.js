@@ -15,7 +15,7 @@ const theme = createTheme({
   },
 });
 
-function App() {
+function Dashboard() {
   const [rows, setRows] = useState([]);
   const [editedRows, setEditedRows] = useState({});
   
@@ -127,8 +127,8 @@ function App() {
 
   const fetchGoogleSheetsData = async () => {
     try {
-      const SHEET_ID = '1VboLfklsQTPmJ5-kdUuKSjiTQxQqZWtMDHO52V5aoDY';
-      const SHEET_ID1= '1sed1ekaNJdUWyivZskMEGPq3H-exlysV'
+      //const SHEET_ID = '1VboLfklsQTPmJ5-kdUuKSjiTQxQqZWtMDHO52V5aoDY';
+      const SHEET_ID = '1pBuekoV1aBkR6H8AGPtrJsYyhWlHPqYmUbikK-4cmek';
       const RANGE = 'Sheet2!A2:I';
       
       const response = await fetch(`/api/sheets?sheetId=${SHEET_ID}&range=${RANGE}`);
@@ -277,11 +277,12 @@ function App() {
           }}>
             <Typography 
               variant="h3" 
-              component="h1" 
               sx={{ 
-                color: 'primary.main',
-                fontWeight: 600,
-                mb: 2
+                color: 'text.primary',
+                mb: 4,
+                textAlign: 'center',
+                fontWeight: 700,
+                letterSpacing: '-0.02em',
               }}
             >
               Job Assistant Dashboard
@@ -290,32 +291,39 @@ function App() {
 
           {/* Main Content */}
           <Paper 
-            elevation={3} 
+            elevation={0}
             sx={{ 
               p: 3,
-              borderRadius: 2,
-              backgroundColor: 'white'
+              borderRadius: 3,
+              backgroundColor: 'background.paper',
+              boxShadow: '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
             }}
           >
             <Box sx={{ 
-              height: 500,  // Increased height
+              height: 500,
               width: '100%',
               '& .MuiDataGrid-root': {
                 border: 'none',
                 '& .MuiDataGrid-cell': {
-                  borderColor: '#f0f0f0'
+                  borderColor: '#f1f5f9',
                 },
                 '& .MuiDataGrid-columnHeaders': {
-                  backgroundColor: '#f5f5f5',
-                  borderBottom: '2px solid #e0e0e0'
+                  backgroundColor: '#f8fafc',
+                  borderBottom: '2px solid #e2e8f0',
+                  '& .MuiDataGrid-columnHeader': {
+                    fontWeight: 600,
+                  },
                 },
                 '& .MuiDataGrid-virtualScroller': {
-                  backgroundColor: '#ffffff'
+                  backgroundColor: '#ffffff',
                 },
                 '& .MuiDataGrid-footerContainer': {
-                  borderTop: '2px solid #e0e0e0',
-                  backgroundColor: '#f5f5f5'
-                }
+                  borderTop: '1px solid #e2e8f0',
+                  backgroundColor: '#f8fafc',
+                },
+                '& .MuiDataGrid-row:hover': {
+                  backgroundColor: '#f8fafc',
+                },
               }
             }}>
               <DataGrid
@@ -330,9 +338,10 @@ function App() {
                 editMode="row"
                 experimentalFeatures={{ newEditingApi: true }}
                 sx={{
-                  '& .MuiDataGrid-row:hover': {
-                    backgroundColor: '#f5f5f5'
-                  }
+                  border: 'none',
+                  '& .MuiDataGrid-cell:focus': {
+                    outline: 'none',
+                  },
                 }}
               />
             </Box>
@@ -350,13 +359,12 @@ function App() {
                 sx={{
                   px: 4,
                   py: 1.5,
-                  borderRadius: 2,
-                  textTransform: 'none',
-                  fontSize: '1rem',
                   fontWeight: 500,
+                  fontSize: '0.95rem',
+                  boxShadow: '0 1px 3px 0 rgb(0 0 0 / 0.1)',
                   '&:hover': {
-                    backgroundColor: 'primary.dark'
-                  }
+                    boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)',
+                  },
                 }}
               >
                 Save Changes ({Object.keys(editedRows).length})
@@ -369,4 +377,4 @@ function App() {
   );
 }
 
-export default App; 
+export default Dashboard; 
