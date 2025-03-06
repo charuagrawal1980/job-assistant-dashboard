@@ -49,6 +49,7 @@ const theme = createTheme({
       styleOverrides: {
         paper: {
           backgroundColor: '#ffffff',
+          //backgroundColor: 'red',
           borderRight: '1px solid #e2e8f0',
         },
       },
@@ -56,6 +57,7 @@ const theme = createTheme({
     MuiListItem: {
       styleOverrides: {
         root: {
+          //backgroundColor: 'yellow',
           borderRadius: 8,
           margin: '4px 8px',
           padding: '10px 16px',
@@ -95,6 +97,7 @@ function MyApp({ Component, pageProps }) {
             variant="permanent"
             sx={{
               width: drawerWidth,
+              //backgroundColor: 'maroon',
               flexShrink: 0,
               '& .MuiDrawer-paper': {
                 width: drawerWidth,
@@ -107,6 +110,7 @@ function MyApp({ Component, pageProps }) {
               p: 3, 
               borderBottom: '1px solid #e2e8f0',
               backgroundColor: 'background.paper',
+              //backgroundColor: 'orange',
             }}>
               <Typography 
                 variant="h6" 
@@ -159,11 +163,18 @@ function MyApp({ Component, pageProps }) {
             component="main"
             sx={{
               flexGrow: 1,
-              p: 4,
+              p: 0,
               width: { sm: `calc(100% - ${drawerWidth}px)` },
               ml: { sm: `${drawerWidth}px` },
               backgroundColor: 'background.default',
+              //backgroundColor: 'purple',
               minHeight: '100vh',
+              display: 'flex',
+              '& > *': {
+                width: '100%',
+                ml: 0,
+                pl: 0
+              }
             }}
           >
             <Component {...pageProps} />

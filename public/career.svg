@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <!-- Background Circle -->
+        <circle fill="#EBF4FF" cx="100" cy="100" r="100"/>
+        
+        <!-- Career Ladder -->
+        <g transform="translate(60, 40)">
+            <!-- Vertical Lines -->
+            <line x1="20" y1="20" x2="20" y2="120" stroke="#1976d2" stroke-width="4"/>
+            <line x1="60" y1="20" x2="60" y2="120" stroke="#1976d2" stroke-width="4"/>
+            
+            <!-- Horizontal Lines (Steps) -->
+            <line x1="20" y1="40" x2="60" y2="40" stroke="#1976d2" stroke-width="4"/>
+            <line x1="20" y1="60" x2="60" y2="60" stroke="#1976d2" stroke-width="4"/>
+            <line x1="20" y1="80" x2="60" y2="80" stroke="#1976d2" stroke-width="4"/>
+            <line x1="20" y1="100" x2="60" y2="100" stroke="#1976d2" stroke-width="4"/>
+            
+            <!-- Success Star -->
+            <path d="M40,10 L44,22 L56,22 L46,30 L50,42 L40,34 L30,42 L34,30 L24,22 L36,22 Z" fill="#FFD700"/>
+        </g>
+        
+        <!-- Progress Dots -->
+        <circle fill="#4CAF50" cx="80" cy="140" r="6"/>
+        <circle fill="#4CAF50" cx="100" cy="140" r="6"/>
+        <circle fill="#4CAF50" cx="120" cy="140" r="6"/>
+    </g>
+</svg> 
